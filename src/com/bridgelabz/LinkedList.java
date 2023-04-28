@@ -39,7 +39,7 @@ public class LinkedList <T>{
         /*
          when temp node is head,and temp is not equal to null then its data equals to search data
          */
-        Node<T> temp = head;;
+        Node<T> temp = head;
         while (temp != null) {
             if (temp.data.equals(searchData))
                 return temp;
@@ -80,5 +80,21 @@ public class LinkedList <T>{
             T popData = head.data;  //first element
             head = head.next;
             return popData;
+    }
+
+    public T popLast() {
+         /*
+           Deleting the Last Element
+         */
+        if (head == null)
+            return null;
+        T popLastData = tail.data;  //last element
+        Node<T> temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;      //Second last element is converting to null using while loop
+        }
+        temp.next = null;
+        tail = temp;
+        return popLastData;
     }
 }
