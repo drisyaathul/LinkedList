@@ -19,6 +19,7 @@ public class LinkedListMain {
         linkedList2.append(30);
         linkedList2.append(70);
         linkedList2.display();
+        System.out.println("-------------------------------------");
         /*
          UC4: Linked list Inserting the element 30.
          */
@@ -33,5 +34,17 @@ public class LinkedListMain {
         else
             System.out.println("Element is NOt inserted");
         linkedList3.display();
+        System.out.println("-------------------------------------");
+        /*
+         UC5: Linked list PopMethod to delete the first element.
+         */
+        linkedList3.display();
+        Integer poppedData = linkedList3.pop();
+        if (poppedData == null)
+            System.out.println("LinkedList is Empty");
+        else
+            System.out.println("The Element popped is "+poppedData);
+        linkedList3.display();
+        System.out.println("-------------------------------------");
     }
 }

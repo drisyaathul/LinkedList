@@ -71,4 +71,14 @@ public class LinkedList <T>{
         }
         System.out.println();
     }
+    public T pop() {
+            /*
+              Deleting the first Element
+            */
+            if (head == null)
+                return null;
+            T popData = head.data;  //first element
+            head = head.next;
+            return popData;
+    }
 }
