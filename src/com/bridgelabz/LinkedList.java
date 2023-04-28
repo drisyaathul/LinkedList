@@ -1,15 +1,15 @@
 package com.bridgelabz;
 
-public class LinkedList <T>{
+public class LinkedList <T> {
 
     Node<T> head;
     Node<T> tail;
 
     public void push(T data) {
         /*
-        * New Node is created in the Linked list.so the head and tail is new node.
-        * if head is not equal to null, then newNode.next will be head.
-        * And head is New node.
+         * New Node is created in the Linked list.so the head and tail is new node.
+         * if head is not equal to null, then newNode.next will be head.
+         * And head is New node.
          */
         Node<T> newNode = new Node<>(data);
         if (head == null) {
@@ -20,6 +20,7 @@ public class LinkedList <T>{
             head = newNode;
         }
     }
+
     public void append(T data) {
         /*
          * New Node is created in the Linked list.so the head and tail is new node.
@@ -30,11 +31,12 @@ public class LinkedList <T>{
         if (head == null) {
             head = newNode;
             tail = newNode;
-        }else {
+        } else {
             tail.next = newNode;
             tail = newNode;
         }
     }
+
     public Node<T> search(T searchData) {
         /*
          when temp node is head,and temp is not equal to null then its data equals to search data
@@ -47,6 +49,7 @@ public class LinkedList <T>{
         }
         return null; //when temp = null;
     }
+
     public boolean insertAfter(T searchData, T insertData) {
         /*
          * After searching the node the new node is inserted next ot it.
@@ -60,26 +63,29 @@ public class LinkedList <T>{
         }
         return false;
     }
+
     public void display() {
         /*
         Display the linked list
          */
-        Node<T> temp = head;;
+        Node<T> temp = head;
+        ;
         while (temp != null) {
-            System.out.print(temp.data+ " -> ");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
         System.out.println();
     }
+
     public T pop() {
             /*
               Deleting the first Element
             */
-            if (head == null)
-                return null;
-            T popData = head.data;  //first element
-            head = head.next;
-            return popData;
+        if (head == null)
+            return null;
+        T popData = head.data;  //first element
+        head = head.next;
+        return popData;
     }
 
     public T popLast() {
@@ -97,4 +103,47 @@ public class LinkedList <T>{
         tail = temp;
         return popLastData;
     }
+
+    public Node<T> delete(T delete) {
+        /*
+         * Deleting the node:-
+         * creating temp node to search the node for deleting
+         */
+        Node<T> temp1 = head;
+        Node<T> temp2 = head;
+        Node<T> temp3 = head;
+        int count = 0;
+        while (temp1 != null & temp2 != null & temp3 != null) {
+            count++;
+            if (count > 2) {
+                temp3 = temp3.next;
+            }
+            if (temp1.data == delete) {
+                temp2 = temp2.next;
+                temp3.next = temp2;
+            }
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+        }
+        return temp1;
+    }
+    public void size () {
+       /*
+        * Size of the Linked list:-
+        * create temp node to find the count.
+        * count starts from when temp is equal to head.
+        * By using while loop, count is added till the temp become null(Tail).
+        * print the count value .
+        */
+        Node<T> temp = head;
+        int count = 0;
+        while (temp != null) {
+            temp = temp.next;
+            count++;
+        }
+        System.out.println("Size of the linked list is " + count);
+    }
 }
+
+
+
