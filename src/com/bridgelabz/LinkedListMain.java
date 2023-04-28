@@ -54,6 +54,7 @@ public class LinkedListMain {
         linkedList4.append(30);
         linkedList4.append(70);
         linkedList4.display();
+
         Integer poppedLastData = linkedList4.popLast();
         if (poppedLastData == null)
             System.out.println("LinkedList is Empty");
@@ -69,6 +70,7 @@ public class LinkedListMain {
         linkedList5.append(30);
         linkedList5.append(70);
         linkedList5.display();
+
         Node<Integer> searchData = linkedList5.search(30);
         if (searchData == null)
             System.out.println("Element is NOT Found");
@@ -79,6 +81,7 @@ public class LinkedListMain {
          UC7: to search the Node value 30.
          */
         linkedList5.display();
+
         boolean isInsert = linkedList5.insertAfter(30,40);
         if (isInsert)
             System.out.println("Element 40 is Inserted");
