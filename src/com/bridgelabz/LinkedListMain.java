@@ -102,7 +102,7 @@ public class LinkedListMain {
         /*
          UC10: Linked list in Ascending Order.
          */
-        SortedLinkedList sortedLinkedList =  new SortedLinkedList();
+        SortedLinkedList <Integer> sortedLinkedList =  new SortedLinkedList<>();
         sortedLinkedList.add(56);
         sortedLinkedList.add(30);
         sortedLinkedList.add(40);
